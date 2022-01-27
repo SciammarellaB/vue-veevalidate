@@ -1,18 +1,41 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+
+  <Cadastro>
+    <template v-slot:action>
+      <button @click="Validar()">Validar</button>
+    </template>
+  </Cadastro>
+
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import { defineComponent, ref } from 'vue';
+import Cadastro, { usuarioComponentSchema } from '../views/Cadastro.vue'
+import { useField, useForm } from 'vee-validate'
+import * as yup from 'yup'
 
 export default defineComponent({
   name: 'Home',
   components: {
-    HelloWorld,
+    Cadastro
   },
+  setup(){
+    
+    const form = useForm({
+      validationSchema: usuarioComponentSchema
+    });
+
+    async function Validar(){
+      const resp = await form.validate();
+
+      if(resp.valid){
+        alert("Usuário criado com sucesso !!!")
+      }
+    }
+
+    return{
+      Validar
+    }
+  }
 });
 </script>
