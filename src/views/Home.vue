@@ -11,8 +11,7 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 import Cadastro, { usuarioComponentSchema } from '../views/Cadastro.vue'
-import { useField, useForm } from 'vee-validate'
-import * as yup from 'yup'
+import { useForm } from 'vee-validate'
 
 export default defineComponent({
   name: 'Home',
