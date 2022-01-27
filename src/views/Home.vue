@@ -2,7 +2,10 @@
 
   <Cadastro>
     <template v-slot:action>
-      <button @click="Validar()">Validar</button>
+      <div>
+        <button @click="Reset()" class="button" style="margin-right: 20px;">Resetar</button>
+        <button @click="Validar()" class="button">Validar</button>
+      </div>      
     </template>
   </Cadastro>
 
@@ -24,6 +27,10 @@ export default defineComponent({
       validationSchema: usuarioComponentSchema
     });
 
+    function Reset(){
+      form.resetForm();
+    }
+
     async function Validar(){
       const resp = await form.validate();
 
@@ -33,8 +40,17 @@ export default defineComponent({
     }
 
     return{
-      Validar
+      Validar,
+      Reset
     }
   }
 });
 </script>
+
+<style>
+  .button{
+    width: 100px;
+    height: 35px;
+    border-radius: 10px;
+  }
+</style>
