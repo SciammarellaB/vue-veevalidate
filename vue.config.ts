@@ -1,3 +1,3 @@
 module.exports = {
-    publicPath: '/vee-validate/'
+    publicPath: '/vue-veevalidate/'
 }
