@@ -2,8 +2,7 @@
 
   <div class="page">
 
-    TESTE
-    <!-- <div class="head">
+    <div class="head">
       <img class="logo" src="../assets/logo.png">
       <span style="font-size: 26px"> Teste de Vee-Validation com VueJs 3 / VueJs 3 Vee-Validation Test</span>
     </div>
@@ -16,7 +15,7 @@
     <div class="bottom">
       <button @click="Reset()" class="button" style="margin-right: 20px;">Resetar</button>
       <button @click="Validar()" class="button">Validar</button>
-    </div>       -->
+    </div>      
 
   </div>
 
@@ -24,21 +23,21 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
-// import Cadastro, { usuarioComponentSchema } from '../views/Cadastro.vue'
-// import CadastroInterface, { usuarioInterfaceComponentSchema } from '../views/CadastroInterface.vue'
+import Cadastro, { usuarioComponentSchema } from '../views/Cadastro.vue'
+import CadastroInterface, { usuarioInterfaceComponentSchema } from '../views/CadastroInterface.vue'
 import { useForm } from 'vee-validate'
 import { Usuario } from '../core/model/Usuario'
 
 export default defineComponent({
   name: 'Home',
   components: {
-    // Cadastro,
-    // CadastroInterface
+    Cadastro,
+    CadastroInterface
   },
   setup(){
     
     const form = useForm({
-      // validationSchema: usuarioComponentSchema
+      validationSchema: usuarioComponentSchema
     });
 
     function Reset(){
