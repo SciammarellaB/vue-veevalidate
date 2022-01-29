@@ -9,13 +9,17 @@
 
     <div class="content">
       <Cadastro/>
-      <CadastroInterface/>
     </div>
 
     <div class="bottom">
-      <button @click="Reset()" class="button" style="margin-right: 20px;">Resetar</button>
-      <button @click="Validar()" class="button">Validar</button>
-    </div>      
+      <button @click="Reset()" class="button" style="margin-right: 20px;">Resetar / Reset</button>
+      <button @click="Validar()" class="button">Validar / Validate</button>
+    </div>    
+
+    <div class="footer">
+      <h1>Resultado Formulário / Form Result</h1>
+      <span>Valor / Value: </span><span>{{resultado}}</span>
+    </div>  
 
   </div>
 
@@ -24,21 +28,20 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 import Cadastro, { usuarioComponentSchema } from '../views/Cadastro.vue'
-import CadastroInterface, { usuarioInterfaceComponentSchema } from '../views/CadastroInterface.vue'
 import { useForm } from 'vee-validate'
-import { Usuario } from '../core/model/Usuario'
 
 export default defineComponent({
   name: 'Home',
   components: {
     Cadastro,
-    CadastroInterface
   },
   setup(){
     
     const form = useForm({
       validationSchema: usuarioComponentSchema
     });
+
+    const resultado = ref<any>();
 
     function Reset(){
       form.resetForm();
@@ -48,11 +51,12 @@ export default defineComponent({
       const resp = await form.validate();
 
       if(resp.valid){
-
+        resultado.value = form.values.usuario
       }
     }
 
     return{
+      resultado,
       Validar,
       Reset
     }
@@ -65,7 +69,7 @@ export default defineComponent({
     margin: 10px 10px 10px 10px;
   }
   .button{
-    width: 100px;
+    width: 150px;
     height: 35px;
     border-radius: 10px;
   }
@@ -89,5 +93,12 @@ export default defineComponent({
     align-items: center;
     justify-content: center;
     margin-top: 20px;
+  }
+  .footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    flex-direction: column;
   }
 </style>

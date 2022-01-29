@@ -2,7 +2,7 @@
     <div class="body">
 
         <div>
-            <h1>Propriedades / Properties</h1>
+            <h1>Cadastro / Registry</h1>
         </div>
 
         <div style="display: flex; flex-direction: column" class="inputContentor">
