@@ -6,7 +6,7 @@ npm install
 
 npm run serve
 ```
-This project is a simple form with four input fields that simulates a CRUD. The user has to fill all the inputs in order to submit the values. Once it's all correct, in the bottom of the page is going to show the data that you just filled.
+This project is a simple form with four input fields that simulates a CRUD. The user has to fill all the inputs in order to submit the values. Once it's all correct, on the bottom of the page is going to show the data that you just filled.
 
 ### Test Project
 
