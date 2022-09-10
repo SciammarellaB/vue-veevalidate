@@ -4,7 +4,7 @@
 
     <div class="head">
       <img class="logo" src="../assets/logo.png">
-      <span style="font-size: 26px"> Teste de Vee-Validation com VueJs 3 / VueJs 3 Vee-Validation Test</span>
+      <span style="font-size: 26px"> Teste de Vee-Validation com VueJs 3</span>
     </div>
 
     <div class="content">
@@ -12,13 +12,13 @@
     </div>
 
     <div class="bottom">
-      <button @click="Reset()" class="button" style="margin-right: 20px;">Resetar / Reset</button>
-      <button @click="Validar()" class="button">Validar / Validate</button>
+      <button @click="Reset()" class="button" style="margin-right: 20px;">Resetar</button>
+      <button @click="Validar()" class="button">Validar</button>
     </div>    
 
     <div class="footer">
-      <h1>Resultado Formulário / Form Result</h1>
-      <span>Valor / Value: </span><span>{{resultado}}</span>
+      <h1>Resultado Formulário</h1>
+      <span>{{resultado}}</span>
     </div>  
 
   </div>

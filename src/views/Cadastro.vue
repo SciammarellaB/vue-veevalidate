@@ -2,11 +2,11 @@
     <div class="body">
 
         <div>
-            <h1>Cadastro / Registry</h1>
+            <h1>Cadastro</h1>
         </div>
 
         <div style="display: flex; flex-direction: column" class="inputContentor">
-            <span class="label" style="margin-left: 15px">Nome / Name</span>
+            <span class="label" style="margin-left: 15px">Nome</span>
             <input id="nome" class="input" v-model="nome">
             <span class="requiredField">{{errors['usuario.nome']}}</span>
         </div>
@@ -18,13 +18,13 @@
         </div>
 
         <div style="display: flex; flex-direction: column" class="inputContentor">
-            <span class="label" style="margin-left: 15px">Telefone / Phone</span>
+            <span class="label" style="margin-left: 15px">Telefone</span>
             <input id="telefone" class="input" v-model="telefone">
             <span class="requiredField">{{errors['usuario.telefone']}}</span>
         </div>
 
         <div style="display: flex; flex-direction: column" class="inputContentor">
-            <span class="label" style="margin-left: 15px">Senha / Password</span>
+            <span class="label" style="margin-left: 15px">Senha</span>
             <input id="senha" class="input" type="password" v-model="senha">
             <span class="requiredField">{{errors['usuario.senha']}}</span>
         </div>
